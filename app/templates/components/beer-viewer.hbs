@@ -1,0 +1,25 @@
+{{#each beer in beers}}
+  <div class="row">
+    <img {{bind-attr src="beer.image"}} class="col-md-2"/>
+    <div class="col-md-3">
+      <p>
+        {{beer.name}}<br/>
+        Cost per bottle: {{beer.price}}
+      </p>
+      {{#if beer.hasReviews}}
+        <button {{action "readReviews"}} class="btn btn-primary">Read reviews ({{beer.reviewCount}})</button>
+      {{/if}}
+      <p>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+      </p>
+      <button {{action "addToCart" beer}} class="btn btn-primary">Add to cart</button>
+    </div>
+  </div>
+  <p>
+    <br/>
+    <br/>
+  </p>
+{{/each}}
